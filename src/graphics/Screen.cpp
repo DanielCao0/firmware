@@ -46,6 +46,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "sleep.h"
 #include "target_specific.h"
 
+#if defined RAK14014
+#if !MESHTASTIC_EXCLUDE_CANNEDMESSAGES
+#include "modules/CannedMessageModule.h"
+#endif
+#endif
+
 #if HAS_WIFI && !defined(ARCH_PORTDUINO)
 #include "mesh/wifi/WiFiAPClient.h"
 #endif
@@ -2606,7 +2612,16 @@ int Screen::handleInputEvent(const InputEvent *event)
             showPrevFrame();
         } else if (event->inputEvent == static_cast<char>(meshtastic_ModuleConfig_CannedMessageConfig_InputEventChar_RIGHT)) {
             showNextFrame();
+        } 
+#ifdef RAK14014        
+        else if (event->inputEvent == static_cast<char>(meshtastic_ModuleConfig_CannedMessageConfig_InputEventChar_CANCEL)) {
+            
+            // auto state = cannedMessageModule->getRunState();
+            // if ( state != CANNED_MESSAGE_RUN_STATE_FREETEXT ) { 
+                 setOn(false);
+            // }
         }
+#endif        
     }
 
     return 0;

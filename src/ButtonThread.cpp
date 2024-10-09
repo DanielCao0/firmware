@@ -154,7 +154,7 @@ int32_t ButtonThread::runOnce()
         case BUTTON_EVENT_MULTI_PRESSED: {
             LOG_BUTTON("Mulitipress! %hux\n", multipressClickCount);
             switch (multipressClickCount) {
-#if HAS_GPS
+#if HAS_GPS && !defined(RAK14014)
             // 3 clicks: toggle GPS
             case 3:
                 if (!config.device.disable_triple_click && (gps != nullptr)) {
@@ -164,6 +164,7 @@ int32_t ButtonThread::runOnce()
                 }
                 break;
 #endif
+ 
 #if defined(USE_EINK) && defined(PIN_EINK_EN) // i.e. T-Echo
             // 4 clicks: toggle backlight
             case 4:

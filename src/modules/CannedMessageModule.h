@@ -89,6 +89,10 @@ class CannedMessageModule : public SinglePortModule, public Observable<const UIF
         }
     }
 
+    cannedMessageModuleRunState getRunState() const {
+        return runState;
+    }
+
   protected:
     virtual int32_t runOnce() override;
 
