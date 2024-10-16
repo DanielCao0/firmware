@@ -784,9 +784,14 @@ void CannedMessageModule::drawKeyboard(OLEDDisplay *display, OLEDDisplayUiState 
 
             Letter letter = this->keyboard[this->charSet][outerIndex][innerIndex];
 
-            Letter updatedLetter = {letter.character, letter.width, xOffset, yOffset, cellWidth, cellHeight};
-
-            this->keyboard[this->charSet][outerIndex][innerIndex] = updatedLetter;
+            Letter updatedLetter = {letter.character, letter.width, xOffset, yOffset, cellWidth, cellHeight};  //
+#ifdef RAK14014
+            if(outerIndex == outerSize - 1)
+            {
+                updatedLetter.rectHeight = 240 - yOffset;
+            }
+#endif
+            this->keyboard[this->charSet][outerIndex][innerIndex] = updatedLetter;   //更新了类的成员变量 键盘变量
 
             float characterOffset = ((cellWidth / 2) - (letter.width / 2));
 

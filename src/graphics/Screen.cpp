@@ -2615,11 +2615,7 @@ int Screen::handleInputEvent(const InputEvent *event)
         } 
 #ifdef RAK14014        
         else if (event->inputEvent == static_cast<char>(meshtastic_ModuleConfig_CannedMessageConfig_InputEventChar_CANCEL)) {
-            
-            // auto state = cannedMessageModule->getRunState();
-            // if ( state != CANNED_MESSAGE_RUN_STATE_FREETEXT ) { 
-                 setOn(false);
-            // }
+            setOn(false);
         }
 #endif        
     }

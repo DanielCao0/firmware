@@ -13,11 +13,11 @@
 
 // move a minimum distance over the screen to detect a "swipe"
 #ifndef TOUCH_THRESHOLD_X
-#define TOUCH_THRESHOLD_X 320/4
+#define TOUCH_THRESHOLD_X 30*3
 #endif
 
 #ifndef TOUCH_THRESHOLD_Y
-#define TOUCH_THRESHOLD_Y 240/4
+#define TOUCH_THRESHOLD_Y 20*3
 #endif
 
 TouchScreenBase::TouchScreenBase(const char *name, uint16_t width, uint16_t height)
