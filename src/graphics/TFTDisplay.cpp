@@ -426,7 +426,7 @@ class LGFX : public lgfx::LGFX_Device
     lgfx::Bus_SPI _bus_instance;
     lgfx::Light_PWM _light_instance;
 #if HAS_TOUCHSCREEN
-#if defined(T_WATCH_S3) || defined(ELECROW)
+#if defined(T_WATCH_S3) || defined(ELECROW) || defined(RAK3112)
     lgfx::Touch_FT5x06 _touch_instance;
 #else
     lgfx::Touch_GT911 _touch_instance;
