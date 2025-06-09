@@ -51,7 +51,7 @@
 #define SPI_MISO (10)
 #define SPI_CS (12)
 
-// #define HW_SPI1_DEVICE  //LORA SPI2
+// LORA SPI2
 
 #define ST7789_CS SPI_CS
 #define ST7789_BL 41
@@ -79,6 +79,6 @@
 #define HAS_BUTTON 1
 #define BUTTON_PIN 38
 
-// #define CANNED_MESSAGE_MODULE_ENABLE 1
-// #define USE_VIRTUAL_KEYBOARD 1
+#define CANNED_MESSAGE_MODULE_ENABLE 1
+#define USE_VIRTUAL_KEYBOARD 1
 // #endif
