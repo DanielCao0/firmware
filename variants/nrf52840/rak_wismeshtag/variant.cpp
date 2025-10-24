@@ -23,6 +23,12 @@
 #include "wiring_constants.h"
 #include "wiring_digital.h"
 
+#define OLED_DC (40)
+#define OLED_CS (33)
+#define OLED_RES (27)
+#define OLED_POWER (7)
+
+
 const uint32_t g_ADigitalPinMap[] = {
     // P0
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
@@ -42,4 +48,22 @@ void initVariant()
     // 3V3 Power Rail
     pinMode(PIN_3V3_EN, OUTPUT);
     digitalWrite(PIN_3V3_EN, HIGH);
+
+    pinMode(OLED_DC, OUTPUT);
+    digitalWrite(OLED_DC, LOW);
+
+    pinMode(OLED_CS, OUTPUT);
+    digitalWrite(OLED_CS, LOW);
+
+    pinMode(OLED_RES, OUTPUT);
+    digitalWrite(OLED_RES, HIGH);
+
+    pinMode(OLED_POWER, OUTPUT);
+    digitalWrite(OLED_POWER, LOW);
+    // delay(10);
+    // digitalWrite(OLED_RES, LOW);
+    // delay(10);
+    // digitalWrite(OLED_RES, HIGH);
+
+    //Wire1.setPins(PIN_WIRE1_SDA, PIN_WIRE1_SCL);
 }

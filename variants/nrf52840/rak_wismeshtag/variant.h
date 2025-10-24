@@ -61,7 +61,7 @@ extern "C" {
 
 #define PIN_BUTTON1 9 // Pin for button on E-ink button module or IO expansion
 #define BUTTON_NEED_PULLUP
-#define PIN_BUTTON2 12
+// #define PIN_BUTTON2 12
 #define PIN_BUTTON3 24
 #define PIN_BUTTON4 25
 
@@ -138,9 +138,18 @@ static const uint8_t SCK = PIN_SPI_SCK;
  */
 #define WIRE_INTERFACES_COUNT 1
 
-// RAK WISMESHTAG
-#define PIN_WIRE_SDA (25)
-#define PIN_WIRE_SCL (24)
+#define PIN_WIRE_SDA (12)
+#define PIN_WIRE_SCL (11)
+
+/*
+ * Wire1 Interfaces for oled display
+ */
+#define PIN_WIRE1_SDA (12)
+#define PIN_WIRE1_SCL (11)
+
+
+// #define I2C_SDA1 PIN_WIRE1_SDA
+// #define I2C_SCL1 PIN_WIRE1_SCL  
 
 // QSPI Pins
 #define PIN_QSPI_SCK 3
@@ -232,6 +241,10 @@ SO GPIO 39/TXEN MAY NOT BE DEFINED FOR SUCCESSFUL OPERATION OF THE SX1262 - TG
 #define ADC_MULTIPLIER 1.73
 
 #define RAK_4631 1
+
+// #define HAS_SCREEN 1
+// #define USE_SSD1306
+#define SCREEN_MIRROR
 
 #ifdef __cplusplus
 }

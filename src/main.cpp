@@ -538,6 +538,7 @@ void setup()
 #elif defined(I2C_SDA1) && !defined(ARCH_RP2040)
     Wire1.begin(I2C_SDA1, I2C_SCL1);
 #elif WIRE_INTERFACES_COUNT == 2
+    //Wire1.setPins(PIN_WIRE1_SDA, PIN_WIRE1_SCL);
     Wire1.begin();
 #endif
 
@@ -555,6 +556,7 @@ void setup()
         LOG_INFO("No I2C device configured, Skip");
     }
 #elif HAS_WIRE
+    //Wire.setPins(PIN_WIRE_SDA, PIN_WIRE_SCL);
     Wire.begin();
 #endif
 #endif
